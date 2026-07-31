@@ -13,6 +13,7 @@ html, body, #root {
    exclude the animated toolbar and home-indicator safe area inconsistently. */
 :root {
   --app-height: 100vh;
+  --app-offset-top: 0px;
 }
 
 @supports (height: 100dvh) {
@@ -25,6 +26,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #e6edf5;
   overflow: hidden;
+  /* Lock the body in place so the OS/browser's native "scroll focused input
+     into view" behavior can't drag the whole page out from under our fixed
+     app shell — we handle keyboard avoidance ourselves via visualViewport. */
+  position: fixed;
+  inset: 0;
+  width: 100%;
 }
 
 .chat-body::-webkit-scrollbar,

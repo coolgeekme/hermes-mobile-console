@@ -57,24 +57,30 @@ export default function App() {
     load()
   }, [])
 
-  // Robust mobile viewport height fix: iOS Safari / standalone PWA mode can
-  // report 100vh/100dvh inconsistently around the animated toolbar and home
-  // indicator. Setting an explicit pixel value from window.innerHeight and
-  // updating it on resize/orientation change (and visualViewport if present)
-  // keeps the layout from getting clipped at the bottom.
+  // Robust mobile viewport + keyboard fix: iOS Safari / standalone PWA mode
+  // resizes the *visual* viewport (not the layout viewport) when the
+  // keyboard opens, and shifts it via visualViewport.offsetTop rather than
+  // actually scrolling our fixed-position body. We track both height and
+  // offsetTop and apply them directly so the input bar stays pinned above
+  // the keyboard instead of getting hidden behind it.
   useEffect(() => {
-    const setAppHeight = () => {
-      const h = window.visualViewport?.height ?? window.innerHeight
-      document.documentElement.style.setProperty('--app-height', `${h}px`)
+    const vv = window.visualViewport
+    const applyViewport = () => {
+      const height = vv?.height ?? window.innerHeight
+      const offsetTop = vv?.offsetTop ?? 0
+      document.documentElement.style.setProperty('--app-height', `${height}px`)
+      document.documentElement.style.setProperty('--app-offset-top', `${offsetTop}px`)
     }
-    setAppHeight()
-    window.addEventListener('resize', setAppHeight)
-    window.addEventListener('orientationchange', setAppHeight)
-    window.visualViewport?.addEventListener('resize', setAppHeight)
+    applyViewport()
+    window.addEventListener('resize', applyViewport)
+    window.addEventListener('orientationchange', applyViewport)
+    vv?.addEventListener('resize', applyViewport)
+    vv?.addEventListener('scroll', applyViewport)
     return () => {
-      window.removeEventListener('resize', setAppHeight)
-      window.removeEventListener('orientationchange', setAppHeight)
-      window.visualViewport?.removeEventListener('resize', setAppHeight)
+      window.removeEventListener('resize', applyViewport)
+      window.removeEventListener('orientationchange', applyViewport)
+      vv?.removeEventListener('resize', applyViewport)
+      vv?.removeEventListener('scroll', applyViewport)
     }
   }, [])
 
@@ -104,7 +110,10 @@ export default function App() {
   }
 
   return (
-    <div className="w-full h-full flex justify-center overflow-hidden bg-bg">
+    <div
+      className="w-full h-full flex justify-center overflow-hidden bg-bg"
+      style={{ transform: 'translateY(var(--app-offset-top, 0px))' }}
+    >
       <div
         className="relative w-full max-w-[430px] overflow-hidden flex flex-col"
         style={{ height: 'var(--app-height)' }}
