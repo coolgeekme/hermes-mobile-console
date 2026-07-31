@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import type { DashboardData } from './types'
-import { DATA_URL } from './config'
+import { CHAT_API_URL, CHAT_SHARED_SECRET, DATA_URL } from './config'
 import Drawer from './Drawer'
 
 interface ChatMessage {
@@ -34,7 +34,11 @@ export default function App() {
     { id: msgId++, from: 'agent', text: "Morning! Here's today's brief:" },
   ])
   const [input, setInput] = useState('')
+  const [thinking, setThinking] = useState(false)
   const chatRef = useRef<HTMLDivElement>(null)
+  const sessionIdRef = useRef<string | null>(
+    typeof window !== 'undefined' ? window.localStorage.getItem('hermes_chat_session') : null,
+  )
 
   const load = () => {
     setLoadError(null)
@@ -88,17 +92,48 @@ export default function App() {
     chatRef.current?.scrollTo({ top: chatRef.current.scrollHeight })
   }, [messages])
 
+  const callChat = async (message: string, sessionId: string | null) => {
+    const r = await fetch(CHAT_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-console-key': CHAT_SHARED_SECRET },
+      body: JSON.stringify({ message, session_id: sessionId ?? undefined }),
+    })
+    if (r.status === 404) return { expired: true as const }
+    if (!r.ok) {
+      const j = await r.json().catch(() => ({}))
+      throw new Error(j.error || 'HTTP ' + r.status)
+    }
+    return r.json() as Promise<{ session_id: string; reply: string }>
+  }
+
   const send = (text?: string) => {
     const val = (text ?? input).trim()
-    if (!val) return
+    if (!val || thinking) return
     setMessages((prev) => [...prev, { id: msgId++, from: 'user', text: val }])
     setInput('')
-    setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        { id: msgId++, from: 'agent', text: 'On it. (This demo UI does not execute live agent actions.)' },
-      ])
-    }, 500)
+    setThinking(true)
+    ;(async () => {
+      try {
+        let resp = await callChat(val, sessionIdRef.current)
+        if ('expired' in resp) {
+          // Server-side session is gone — drop it and retry once fresh.
+          sessionIdRef.current = null
+          window.localStorage.removeItem('hermes_chat_session')
+          resp = await callChat(val, null)
+          if ('expired' in resp) throw new Error('session reset failed')
+        }
+        sessionIdRef.current = resp.session_id
+        window.localStorage.setItem('hermes_chat_session', resp.session_id)
+        setMessages((prev) => [...prev, { id: msgId++, from: 'agent', text: resp.reply || '(no reply)' }])
+      } catch (e: any) {
+        setMessages((prev) => [
+          ...prev,
+          { id: msgId++, from: 'agent', text: `Couldn't reach Hermes right now (${e?.message || e}). Try again in a moment.` },
+        ])
+      } finally {
+        setThinking(false)
+      }
+    })()
   }
 
   const quickReply = (label: string) => {
@@ -172,6 +207,13 @@ export default function App() {
               )}
             </div>
           ))}
+          {thinking && (
+            <div className="flex mb-3">
+              <div className="glass-card rounded-2xl rounded-bl-[4px] px-3.5 py-2.5 text-[13.5px] text-muted">
+                Hermes is thinking…
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Quick chips */}
@@ -197,12 +239,14 @@ export default function App() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && send()}
             type="text"
-            placeholder="Message Hermes..."
-            className="flex-1 glass-card rounded-[20px] px-3.5 py-2.5 text-[13.5px] outline-none text-[#e6edf5] placeholder:text-muted"
+            placeholder={thinking ? 'Hermes is thinking…' : 'Message Hermes...'}
+            disabled={thinking}
+            className="flex-1 glass-card rounded-[20px] px-3.5 py-2.5 text-[13.5px] outline-none text-[#e6edf5] placeholder:text-muted disabled:opacity-60"
           />
           <button
             onClick={() => send()}
-            className="w-[38px] h-[38px] rounded-full bg-gradient-to-br from-cyan to-purple text-bg font-bold text-[15px] flex items-center justify-center flex-shrink-0"
+            disabled={thinking}
+            className="w-[38px] h-[38px] rounded-full bg-gradient-to-br from-cyan to-purple text-bg font-bold text-[15px] flex items-center justify-center flex-shrink-0 disabled:opacity-50"
           >
             →
           </button>

@@ -11,3 +11,14 @@ export const VAPID_PUBLIC_KEY =
 
 // Same-origin serverless endpoint (Vercel) that stores push subscriptions.
 export const SUBSCRIBE_URL = '/api/subscribe'
+
+// Same-origin serverless endpoint (Vercel) that proxies chat messages to the
+// Hermes API server running on the VPS. The Hermes API key itself never
+// touches the client — the proxy holds it server-side.
+export const CHAT_API_URL = '/api/chat'
+
+// Shared secret sent as x-console-key to the chat proxy. NOTE: this is
+// embedded in the client bundle, so it is an obscurity-grade gate (stops
+// drive-by abuse of the proxy endpoint), not a real authentication boundary.
+// The actual Hermes API key stays server-side in Vercel env vars.
+export const CHAT_SHARED_SECRET = 'xQXARhu3N176ujZcBBg2wwVyAK0JMAA9'
