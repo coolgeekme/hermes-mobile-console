@@ -53,12 +53,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     if (!sid) {
+      // Title must be unique per session (the API server rejects duplicate
+      // titles with 400 invalid_title), so stamp it.
+      const title = `Mobile Console Chat ${new Date().toISOString().slice(0, 16)}`
       const r = await fetch(`${BASE}/api/sessions`, {
         method: 'POST',
         headers,
-        body: JSON.stringify({ title: 'Mobile Console Chat' }),
+        body: JSON.stringify({ title }),
       })
-      if (!r.ok) return res.status(502).json({ error: 'Failed to create chat session' })
+      if (!r.ok) {
+        const detail = await r.text().catch(() => '')
+        console.error('session create failed', r.status, detail.slice(0, 300))
+        return res.status(502).json({ error: 'Failed to create chat session', upstream: r.status })
+      }
       const j = await r.json()
       sid = j?.session?.id ?? null
       if (!sid) return res.status(502).json({ error: 'Failed to create chat session' })
