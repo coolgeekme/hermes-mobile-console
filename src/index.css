@@ -8,6 +8,19 @@ html, body, #root {
   background: #06080b;
 }
 
+/* --app-height is set from JS (window.innerHeight) as a robust fallback for
+   iOS Safari / standalone PWA mode, where 100vh/100dvh can still include or
+   exclude the animated toolbar and home-indicator safe area inconsistently. */
+:root {
+  --app-height: 100vh;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --app-height: 100dvh;
+  }
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #e6edf5;

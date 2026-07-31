@@ -57,6 +57,27 @@ export default function App() {
     load()
   }, [])
 
+  // Robust mobile viewport height fix: iOS Safari / standalone PWA mode can
+  // report 100vh/100dvh inconsistently around the animated toolbar and home
+  // indicator. Setting an explicit pixel value from window.innerHeight and
+  // updating it on resize/orientation change (and visualViewport if present)
+  // keeps the layout from getting clipped at the bottom.
+  useEffect(() => {
+    const setAppHeight = () => {
+      const h = window.visualViewport?.height ?? window.innerHeight
+      document.documentElement.style.setProperty('--app-height', `${h}px`)
+    }
+    setAppHeight()
+    window.addEventListener('resize', setAppHeight)
+    window.addEventListener('orientationchange', setAppHeight)
+    window.visualViewport?.addEventListener('resize', setAppHeight)
+    return () => {
+      window.removeEventListener('resize', setAppHeight)
+      window.removeEventListener('orientationchange', setAppHeight)
+      window.visualViewport?.removeEventListener('resize', setAppHeight)
+    }
+  }, [])
+
   useEffect(() => {
     chatRef.current?.scrollTo({ top: chatRef.current.scrollHeight })
   }, [messages])
@@ -84,9 +105,12 @@ export default function App() {
 
   return (
     <div className="w-full h-full flex justify-center overflow-hidden bg-bg">
-      <div className="relative w-full max-w-[430px] h-screen overflow-hidden">
+      <div
+        className="relative w-full max-w-[430px] overflow-hidden flex flex-col"
+        style={{ height: 'var(--app-height)' }}
+      >
         {/* Header */}
-        <header className="flex items-center justify-between px-4 py-3.5 border-b border-border bg-bg/90 backdrop-blur relative z-10">
+        <header className="flex items-center justify-between px-4 py-3.5 border-b border-border bg-bg/90 backdrop-blur relative z-10 flex-shrink-0">
           <button
             onClick={() => setDrawerOpen(true)}
             className="w-[34px] h-[34px] rounded-[10px] glass-card flex items-center justify-center text-base"
@@ -106,8 +130,7 @@ export default function App() {
         {/* Chat body */}
         <div
           ref={chatRef}
-          className="overflow-y-auto px-4 py-4 chat-body"
-          style={{ height: 'calc(100vh - 62px - 104px)' }}
+          className="overflow-y-auto px-4 py-4 chat-body flex-1 min-h-0"
         >
           <div className="text-center text-[10.5px] text-muted mb-4">Today</div>
           {loadError && (
@@ -143,7 +166,7 @@ export default function App() {
         </div>
 
         {/* Quick chips */}
-        <div className="flex gap-2 overflow-x-auto px-4 py-2 quick-chips">
+        <div className="flex gap-2 overflow-x-auto px-4 py-2 quick-chips flex-shrink-0">
           {['📊 Open dashboard', '✉️ Pending drafts', '⏰ Cron status'].map((c) => (
             <button
               key={c}
@@ -157,7 +180,7 @@ export default function App() {
 
         {/* Input bar */}
         <div
-          className="flex items-center gap-2 px-3 pt-2 border-t border-border bg-bg/90"
+          className="flex items-center gap-2 px-3 pt-2 border-t border-border bg-bg/90 flex-shrink-0"
           style={{ paddingBottom: 'calc(8px + env(safe-area-inset-bottom))' }}
         >
           <input
