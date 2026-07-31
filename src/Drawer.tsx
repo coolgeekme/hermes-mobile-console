@@ -1,5 +1,6 @@
 import React from 'react'
 import type { DashboardData } from './types'
+import { usePushNotifications } from './usePushNotifications'
 
 interface Props {
   open: boolean
@@ -28,6 +29,7 @@ export default function Drawer({ open, onClose, data, onRefresh }: Props) {
   const skillsCount = data?.skills_count ?? '—'
   const tasksCount = data?.tasks_today ?? '—'
   const memoryPct = data?.memory_pct ?? '—'
+  const push = usePushNotifications()
 
   return (
     <div
@@ -48,14 +50,35 @@ export default function Drawer({ open, onClose, data, onRefresh }: Props) {
             <div className="text-[15px] font-bold">Dashboard</div>
             <div className="text-[11px] text-muted">Agent vitals & controls</div>
           </div>
-          <button
-            onClick={onRefresh}
-            className="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-sm flex-shrink-0"
-            aria-label="Refresh live data"
-            title="Refresh live data"
-          >
-            ⟳
-          </button>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {push.supported && push.status === 'subscribed' && (
+              <span
+                className="text-[9.5px] px-2 py-1 rounded-full border border-green/30 bg-green/[.13] text-green whitespace-nowrap"
+                title="Push notifications are enabled on this device"
+              >
+                🔔 on
+              </span>
+            )}
+            {push.supported && push.status !== 'subscribed' && push.status !== 'denied' && (
+              <button
+                onClick={push.subscribe}
+                disabled={push.busy}
+                className="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-sm flex-shrink-0 disabled:opacity-50"
+                aria-label="Enable notifications"
+                title="Enable notifications"
+              >
+                🔕
+              </button>
+            )}
+            <button
+              onClick={onRefresh}
+              className="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-sm flex-shrink-0"
+              aria-label="Refresh live data"
+              title="Refresh live data"
+            >
+              ⟳
+            </button>
+          </div>
         </div>
         <div className="flex-1 overflow-y-auto px-4 py-3.5 drawer-body">
           <div className="grid grid-cols-2 gap-2.5 mb-4">

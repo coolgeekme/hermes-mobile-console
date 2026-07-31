@@ -47,3 +47,51 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 });
+
+// --- Web Push ---
+
+self.addEventListener('push', (event) => {
+  let payload = { title: 'Hermes', body: 'You have a new update.', url: '/' };
+  if (event.data) {
+    try {
+      payload = { ...payload, ...event.data.json() };
+    } catch (e) {
+      const text = (() => {
+        try {
+          return event.data.text();
+        } catch (_) {
+          return '';
+        }
+      })();
+      if (text) payload.body = text;
+    }
+  }
+  const options = {
+    body: payload.body,
+    icon: '/icon.svg',
+    badge: '/icon.svg',
+    data: { url: payload.url || '/' },
+  };
+  event.waitUntil(self.registration.showNotification(payload.title || 'Hermes', options));
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const targetUrl = (event.notification.data && event.notification.data.url) || '/';
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
+      for (const client of clientList) {
+        if ('focus' in client) {
+          client.focus();
+          if ('navigate' in client && targetUrl && targetUrl !== '/') {
+            client.navigate(targetUrl).catch(() => {});
+          }
+          return;
+        }
+      }
+      if (self.clients.openWindow) {
+        return self.clients.openWindow(targetUrl);
+      }
+    })
+  );
+});
