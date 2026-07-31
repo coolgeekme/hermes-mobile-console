@@ -54,8 +54,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     if (!sid) {
       // Title must be unique per session (the API server rejects duplicate
-      // titles with 400 invalid_title), so stamp it.
-      const title = `Mobile Console Chat ${new Date().toISOString().slice(0, 16)}`
+      // titles with 400 invalid_title), so stamp it with seconds + random
+      // suffix — two sessions in the same minute must not collide.
+      const stamp = new Date().toISOString().slice(0, 19)
+      const rand = Math.random().toString(36).slice(2, 6)
+      const title = `Mobile Console Chat ${stamp} ${rand}`
       const r = await fetch(`${BASE}/api/sessions`, {
         method: 'POST',
         headers,
