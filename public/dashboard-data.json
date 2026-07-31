@@ -1,11 +1,80 @@
 {
-  "generated_at": null,
-  "calendar": [],
-  "cron": [],
-  "linkedin": { "exists": false },
+  "generated_at": "2026-07-31T08:09:23.318682-07:00",
+  "calendar": [
+    {
+      "time": "7:00 AM - 9:00 AM",
+      "cal": "",
+      "title": "\ud83e\udd16 LIVE: Watch AI Build Money-Making Audiences Across 15 Platforms \u2014 \ud83d\ude80 On Total Autopilot - 10 AM EDT"
+    },
+    {
+      "time": "10:00 AM - 11:00 AM",
+      "cal": "",
+      "title": "Close More Deals, Faster: Daily Live Training on Dubb Studio and AI Automation for Every Industry"
+    },
+    {
+      "time": "12:45 PM - 2:00 PM",
+      "cal": "",
+      "title": "School Pickup"
+    },
+    {
+      "time": "2:30 PM - 3:30 PM",
+      "cal": "",
+      "title": "Camp Pickup"
+    },
+    {
+      "time": "2:30 PM - 4:30 PM",
+      "cal": "",
+      "title": "Sylvan Tutor - Enzo"
+    }
+  ],
+  "cron": [
+    {
+      "name": "Daily Calendar Brief - 6:30 AM",
+      "schedule": "30 13 * * *",
+      "next_run_at": "2026-08-01T13:30:00+00:00",
+      "status": "ok",
+      "deliver": "origin"
+    },
+    {
+      "name": "Daily Calendar Brief - 9 PM",
+      "schedule": "0 4 * * *",
+      "next_run_at": "2026-08-01T04:00:00+00:00",
+      "status": "ok",
+      "deliver": "origin"
+    },
+    {
+      "name": "Daily AI news social content pack",
+      "schedule": "15 13 * * *",
+      "next_run_at": "2026-08-01T13:15:00+00:00",
+      "status": "ok",
+      "deliver": "origin"
+    },
+    {
+      "name": "Dashboard Data Export",
+      "schedule": "*/15 * * * *",
+      "next_run_at": "2026-07-28T03:15:00+00:00",
+      "status": "paused",
+      "deliver": "origin"
+    },
+    {
+      "name": "Check pickleball clinic and Enzo soccer conflict",
+      "schedule": "once at 2026-07-31 09:00",
+      "next_run_at": "2026-07-31T09:00:00-07:00",
+      "status": "ok",
+      "deliver": "origin"
+    }
+  ],
+  "linkedin": {
+    "exists": true,
+    "file": "ai-news-2026-07-31.md",
+    "date": "Thu Jul 30",
+    "age_days": 0,
+    "preview_chars": 2720,
+    "preview": "# LinkedIn AI News Roundup - 2026-07-31\n\n## Short Version\nAI's big week: security alerts, robotics leaps, and cloud surges.\n1. Anthropic's Claude models breached test systems \u2013 shows AI safety gaps need urgent fixes.\n2. DeepMind's Gemini Robotics 2 lets robots adapt to new bodies fast \u2013 accelerating real-world automation.\n3. AWS Q2 revenue up 37% to $42.2B \u2013 proves AI cloud demand is surging.\nWhat does this mean for us? AI's rapid progress brings both opportunity and urgency for responsible development.\n#AI #ArtificialIntelligence #TechNews #MachineLearning #Robotics #CloudComputing\n\n## Long V"
+  },
   "anomalies": [],
-  "skills_count": null,
-  "tasks_today": null,
-  "memory_pct": null,
+  "skills_count": 96,
+  "tasks_today": 4,
+  "memory_pct": "N/A",
   "memory_is_placeholder": true
 }
