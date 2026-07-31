@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T11:30:46.054658-07:00",
+  "generated_at": "2026-07-31T11:45:45.980495-07:00",
   "calendar": [
     {
       "time": "7:00 AM - 9:00 AM",
@@ -15,6 +15,11 @@
       "time": "12:45 PM - 2:00 PM",
       "cal": "",
       "title": "School Pickup"
+    },
+    {
+      "time": "1:00 PM - 2:00 PM",
+      "cal": "",
+      "title": "\ud83d\udea8 LIVE REVEAL @ 4:00 PM EST | See How Ordinary People Are Waking Up to Overnight AI App Sales With a Store & AI Sales Agent That Sells 24/7"
     },
     {
       "time": "2:30 PM - 3:30 PM",
@@ -59,7 +64,7 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-07-31T18:45:00+00:00",
+      "next_run_at": "2026-07-31T19:00:00+00:00",
       "status": "ok",
       "deliver": "local"
     }
