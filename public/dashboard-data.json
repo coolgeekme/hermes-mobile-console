@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-08-01T11:45:58.472418-07:00",
+  "generated_at": "2026-08-01T12:00:59.153708-07:00",
   "calendar": [
     {
-      "time": "9:00 AM - 11:00 AM",
+      "time": "7:00 AM - 9:00 AM",
       "cal": "",
-      "title": "\ud83e\udd16 LIVE: Watch AI Build Money-Making Audiences Across 15 Platforms \u2014 \ud83d\ude80 On Total Autopilot \ud83d\udd59 Today at 12:00 PM EDT"
+      "title": "Men's Pickleball League"
     },
     {
-      "time": "12:15 PM - 2:00 PM",
+      "time": "7:00 AM - 3:00 PM",
       "cal": "",
-      "title": "Paqua Park Obstacle Course"
+      "title": "Life Time Work"
+    },
+    {
+      "time": "9:00 AM - 12:00 PM",
+      "cal": "",
+      "title": "LT Women's Pickleball League"
     },
     {
       "time": "1:00 PM - 2:00 PM",
       "cal": "",
-      "title": "\ud83d\udea8 FINAL REVEAL @ 4PM EST: Watch AI Build Money-Making Audiences + Get 2 AI Apps FREE! \ud83c\udf81"
-    },
-    {
-      "time": "3:30 PM - 4:30 PM",
-      "cal": "",
-      "title": "Haircut - Diego & Enzo"
+      "title": "Swim Lessons - Giovanna"
     }
   ],
   "cron": [
@@ -54,7 +54,7 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-01T19:00:00+00:00",
+      "next_run_at": "2026-08-01T19:15:00+00:00",
       "status": "ok",
       "deliver": "local"
     }
