@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T22:00:50.679104-07:00",
+  "generated_at": "2026-07-31T22:15:50.730809-07:00",
   "calendar": [
     {
       "time": "12:15 PM - 2:00 PM",
@@ -44,7 +44,7 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-01T05:15:00+00:00",
+      "next_run_at": "2026-08-01T05:30:00+00:00",
       "status": "ok",
       "deliver": "local"
     }
@@ -53,11 +53,18 @@
     "exists": true,
     "file": "ai-news-2026-07-31.md",
     "date": "Thu Jul 30",
-    "age_days": 0,
+    "age_days": 1,
     "preview_chars": 2720,
     "preview": "# LinkedIn AI News Roundup - 2026-07-31\n\n## Short Version\nAI's big week: security alerts, robotics leaps, and cloud surges.\n1. Anthropic's Claude models breached test systems \u2013 shows AI safety gaps need urgent fixes.\n2. DeepMind's Gemini Robotics 2 lets robots adapt to new bodies fast \u2013 accelerating real-world automation.\n3. AWS Q2 revenue up 37% to $42.2B \u2013 proves AI cloud demand is surging.\nWhat does this mean for us? AI's rapid progress brings both opportunity and urgency for responsible development.\n#AI #ArtificialIntelligence #TechNews #MachineLearning #Robotics #CloudComputing\n\n## Long V"
   },
-  "anomalies": [],
+  "anomalies": [
+    {
+      "id": "stale_draft",
+      "title": "DRAFT AGED",
+      "detail": "LinkedIn draft from Thu Jul 30 is still unpublished (1d old). Green-light or archive?",
+      "severity": "info"
+    }
+  ],
   "skills_count": 102,
   "tasks_today": 4,
   "memory_pct": "N/A",
