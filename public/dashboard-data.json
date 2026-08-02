@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-08-02T02:45:38.629371-07:00",
+  "generated_at": "2026-08-02T03:00:38.993126-07:00",
   "calendar": [
+    {
+      "time": "7:00 AM - 8:00 AM",
+      "cal": "",
+      "title": "\ud83d\udd25 Generate High-Intent LinkedIn Leads in MINUTES\u2026Not Days & Turn Them Into $1,000+ Clients | LIVE Today @ 10AM EST \ud83d\udcb0"
+    },
     {
       "time": "7:00 AM - 9:00 AM",
       "cal": "",
@@ -54,7 +59,7 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-02T10:00:00+00:00",
+      "next_run_at": "2026-08-02T10:15:00+00:00",
       "status": "ok",
       "deliver": "local"
     }
