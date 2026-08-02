@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T07:45:41.532810-07:00",
+  "generated_at": "2026-08-02T08:00:42.027222-07:00",
   "calendar": [
     {
       "time": "7:00 AM - 8:00 AM",
@@ -69,7 +69,7 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-02T15:00:00+00:00",
+      "next_run_at": "2026-08-02T15:15:00+00:00",
       "status": "ok",
       "deliver": "local"
     }
@@ -90,7 +90,7 @@
       "severity": "info"
     }
   ],
-  "skills_count": 108,
+  "skills_count": 109,
   "tasks_today": 4,
   "memory_pct": "N/A",
   "memory_is_placeholder": true
