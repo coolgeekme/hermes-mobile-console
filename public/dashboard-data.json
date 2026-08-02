@@ -1,40 +1,40 @@
 {
-  "generated_at": "2026-08-02T11:45:50.457189-07:00",
+  "generated_at": "2026-08-02T12:00:49.209606-07:00",
   "calendar": [
     {
-      "time": "7:00 AM - 8:00 AM",
+      "time": "10:00 AM - 11:00 AM",
       "cal": "",
-      "title": "\ud83d\udd25 Generate High-Intent LinkedIn Leads in MINUTES\u2026Not Days & Turn Them Into $1,000+ Clients | LIVE Today @ 10AM EST \ud83d\udcb0"
+      "title": "Close More Deals, Faster: Daily Live Training on Dubb Studio and AI Automation for Every Industry"
     },
     {
-      "time": "7:00 AM - 9:00 AM",
+      "time": "10:30 AM - 11:30 AM",
       "cal": "",
-      "title": "Men's Pickleball League"
+      "title": "(no title)"
     },
     {
-      "time": "7:00 AM - 3:00 PM",
+      "time": "2:15 PM - 4:00 PM",
       "cal": "",
-      "title": "Life Time Work"
+      "title": "PT - Tiffany"
     },
     {
-      "time": "8:00 AM - 10:00 AM",
+      "time": "2:30 PM - 3:30 PM",
       "cal": "",
-      "title": "\ud83e\udd16 LIVE: See How Anyone Can Launch Their Own AI Software Store in Under 5 Minutes\u2014With an AI Sales Agent Closing Deals 24/7 - 11 AM EDT"
+      "title": "Camp Pickup"
     },
     {
-      "time": "9:00 AM - 10:00 AM",
+      "time": "3:30 PM - 4:30 PM",
       "cal": "",
-      "title": "\ud83d\udea8 LIVE REVEAL @ 12:00 PM EST | See How Ordinary People Are Waking Up to Overnight AI App Sales With a Store & AI Sales Agent That Sells 24/7"
+      "title": "Math Tutor - Giovanna, Enzo & Diego"
     },
     {
-      "time": "9:00 AM - 12:00 PM",
+      "time": "6:15 PM - 8:30 PM",
       "cal": "",
-      "title": "LT Women's Pickleball League"
+      "title": "Soccer Practice (Ascent) - Enzo"
     },
     {
-      "time": "1:00 PM - 2:00 PM",
+      "time": "7:30 PM - 8:30 PM",
       "cal": "",
-      "title": "Swim Lessons - Giovanna"
+      "title": "Diego - Basketball Training"
     }
   ],
   "cron": [
@@ -69,7 +69,7 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-02T19:00:00+00:00",
+      "next_run_at": "2026-08-02T19:15:00+00:00",
       "status": "ok",
       "deliver": "local"
     }
