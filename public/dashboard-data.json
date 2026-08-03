@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-02T22:00:56.262726-07:00",
+  "generated_at": "2026-08-02T22:15:55.630837-07:00",
   "calendar": [
     {
       "time": "10:00 AM - 11:00 AM",
@@ -56,7 +56,7 @@
       "name": "Daily AI news social content pack",
       "schedule": "15 13 * * *",
       "next_run_at": "2026-08-03T13:15:00+00:00",
-      "status": "ok",
+      "status": "error",
       "deliver": "origin"
     },
     {
@@ -69,7 +69,7 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-03T05:15:00+00:00",
+      "next_run_at": "2026-08-03T05:30:00+00:00",
       "status": "ok",
       "deliver": "local"
     }
@@ -78,7 +78,7 @@
     "exists": true,
     "file": "ai-news-2026-07-31.md",
     "date": "Thu Jul 30",
-    "age_days": 2,
+    "age_days": 3,
     "preview_chars": 2720,
     "preview": "# LinkedIn AI News Roundup - 2026-07-31\n\n## Short Version\nAI's big week: security alerts, robotics leaps, and cloud surges.\n1. Anthropic's Claude models breached test systems \u2013 shows AI safety gaps need urgent fixes.\n2. DeepMind's Gemini Robotics 2 lets robots adapt to new bodies fast \u2013 accelerating real-world automation.\n3. AWS Q2 revenue up 37% to $42.2B \u2013 proves AI cloud demand is surging.\nWhat does this mean for us? AI's rapid progress brings both opportunity and urgency for responsible development.\n#AI #ArtificialIntelligence #TechNews #MachineLearning #Robotics #CloudComputing\n\n## Long V"
   },
@@ -86,11 +86,17 @@
     {
       "id": "stale_draft",
       "title": "DRAFT AGED",
-      "detail": "LinkedIn draft from Thu Jul 30 is still unpublished (2d old). Green-light or archive?",
+      "detail": "LinkedIn draft from Thu Jul 30 is still unpublished (3d old). Green-light or archive?",
       "severity": "info"
+    },
+    {
+      "id": "cron_Daily AI news social content pack",
+      "title": "CRON ERROR",
+      "detail": "Daily AI news social content pack failed its last run.",
+      "severity": "alert"
     }
   ],
-  "skills_count": 115,
+  "skills_count": 116,
   "tasks_today": 4,
   "memory_pct": "N/A",
   "memory_is_placeholder": true
