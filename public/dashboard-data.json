@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-08-03T04:00:59.279993-07:00",
+  "generated_at": "2026-08-03T04:15:59.135222-07:00",
   "calendar": [
+    {
+      "time": "7:00 AM - 8:00 AM",
+      "cal": "",
+      "title": "\ud83d\udea8 FINAL REVEAL @ 10AM EST: Watch AI Build Money-Making Audiences + Get 2 AI Apps FREE! \ud83c\udf81"
+    },
     {
       "time": "10:00 AM - 11:00 AM",
       "cal": "",
@@ -69,7 +74,7 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-03T11:15:00+00:00",
+      "next_run_at": "2026-08-03T11:30:00+00:00",
       "status": "ok",
       "deliver": "local"
     }
