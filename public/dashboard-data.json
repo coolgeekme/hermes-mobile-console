@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-03T11:45:08.477970-07:00",
+  "generated_at": "2026-08-03T12:00:08.980251-07:00",
   "calendar": [
     {
-      "time": "7:00 AM - 8:00 AM",
+      "time": "8:00 AM - 8:45 AM",
       "cal": "",
-      "title": "\ud83d\udea8 FINAL REVEAL @ 10AM EST: Watch AI Build Money-Making Audiences + Get 2 AI Apps FREE! \ud83c\udf81"
+      "title": "(no title)"
     },
     {
       "time": "10:00 AM - 11:00 AM",
@@ -12,34 +12,14 @@
       "title": "Close More Deals, Faster: Daily Live Training on Dubb Studio and AI Automation for Every Industry"
     },
     {
-      "time": "10:30 AM - 11:30 AM",
+      "time": "10:30 AM - 1:30 PM",
       "cal": "",
-      "title": "(no title)"
-    },
-    {
-      "time": "2:15 PM - 4:00 PM",
-      "cal": "",
-      "title": "PT - Tiffany"
+      "title": "Life Time Work"
     },
     {
       "time": "2:30 PM - 3:30 PM",
       "cal": "",
       "title": "School Pickup"
-    },
-    {
-      "time": "3:30 PM - 4:30 PM",
-      "cal": "",
-      "title": "Math Tutor - Giovanna, Enzo & Diego"
-    },
-    {
-      "time": "6:15 PM - 8:30 PM",
-      "cal": "",
-      "title": "Soccer Practice (Ascent) - Enzo"
-    },
-    {
-      "time": "7:30 PM - 8:30 PM",
-      "cal": "",
-      "title": "Diego - Basketball Training"
     }
   ],
   "cron": [
@@ -74,7 +54,7 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-03T19:00:00+00:00",
+      "next_run_at": "2026-08-03T19:15:00+00:00",
       "status": "ok",
       "deliver": "local"
     }
