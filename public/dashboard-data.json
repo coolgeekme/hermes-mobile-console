@@ -1,35 +1,30 @@
 {
-  "generated_at": "2026-08-04T11:45:53.812315-07:00",
+  "generated_at": "2026-08-04T12:01:03.308410-07:00",
   "calendar": [
-    {
-      "time": "7:00 AM - 9:00 AM",
-      "cal": "",
-      "title": "\ud83d\udd34 LIVE: From Near Death to Discovering the 8-Figure Formula That Pays $10,000+ Commissions - 10 AM EDT Confirmation"
-    },
-    {
-      "time": "8:00 AM - 8:45 AM",
-      "cal": "",
-      "title": "(no title)"
-    },
     {
       "time": "10:00 AM - 11:00 AM",
       "cal": "",
       "title": "Close More Deals, Faster: Daily Live Training on Dubb Studio and AI Automation for Every Industry"
     },
     {
-      "time": "10:30 AM - 1:30 PM",
+      "time": "10:30 AM - 11:30 AM",
       "cal": "",
-      "title": "Life Time Work"
-    },
-    {
-      "time": "11:00 AM - 12:00 PM",
-      "cal": "",
-      "title": "\ud83d\udea8 MASSIVE AI SHIFT @ 2 PM EST: Command AI To Finish $500 to $3K Client Jobs"
+      "title": "(no title)"
     },
     {
       "time": "2:30 PM - 3:30 PM",
       "cal": "",
       "title": "School Pickup"
+    },
+    {
+      "time": "3:00 PM - 4:00 PM",
+      "cal": "",
+      "title": "Dermatologist - Tiffany"
+    },
+    {
+      "time": "6:15 PM - 8:30 PM",
+      "cal": "",
+      "title": "Soccer Practice (Ascent) - Enzo"
     }
   ],
   "cron": [
@@ -64,14 +59,14 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-04T19:00:00+00:00",
+      "next_run_at": "2026-08-04T19:15:00+00:00",
       "status": "ok",
       "deliver": "local"
     },
     {
       "name": "Topic Dashboard Refresh",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-04T19:00:00+00:00",
+      "next_run_at": "2026-08-04T19:15:00+00:00",
       "status": "error",
       "deliver": "local"
     }
