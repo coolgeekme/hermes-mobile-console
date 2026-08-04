@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T17:15:12.513316-07:00",
+  "generated_at": "2026-08-03T17:30:12.611228-07:00",
   "calendar": [
     {
       "time": "8:00 AM - 8:45 AM",
@@ -54,15 +54,15 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-04T00:30:00+00:00",
+      "next_run_at": "2026-08-04T00:45:00+00:00",
       "status": "ok",
       "deliver": "local"
     },
     {
       "name": "Topic Dashboard Refresh",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-04T00:30:00+00:00",
-      "status": "ok",
+      "next_run_at": "2026-08-04T00:45:00+00:00",
+      "status": "error",
       "deliver": "local"
     }
   ],
@@ -80,6 +80,12 @@
       "title": "DRAFT AGED",
       "detail": "LinkedIn draft from Thu Jul 30 is still unpublished (3d old). Green-light or archive?",
       "severity": "info"
+    },
+    {
+      "id": "cron_Topic Dashboard Refresh",
+      "title": "CRON ERROR",
+      "detail": "Topic Dashboard Refresh failed its last run.",
+      "severity": "alert"
     }
   ],
   "skills_count": 119,
