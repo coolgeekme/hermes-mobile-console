@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T12:16:03.297651-07:00",
+  "generated_at": "2026-08-04T12:30:54.526107-07:00",
   "calendar": [
     {
       "time": "10:00 AM - 11:00 AM",
@@ -19,12 +19,12 @@
     {
       "time": "3:00 PM - 4:00 PM",
       "cal": "",
-      "title": "Dermatologist - Tiffany"
+      "title": "Dermatologist - Tiffany \ud83d\udd14"
     },
     {
       "time": "6:15 PM - 8:30 PM",
       "cal": "",
-      "title": "Soccer Practice (Ascent) - Enzo"
+      "title": "Soccer Practice (Ascent) - Enzo \ud83d\udd14"
     }
   ],
   "cron": [
@@ -59,14 +59,14 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-04T19:30:00+00:00",
+      "next_run_at": "2026-08-04T19:45:00+00:00",
       "status": "ok",
       "deliver": "local"
     },
     {
       "name": "Topic Dashboard Refresh",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-04T19:30:00+00:00",
+      "next_run_at": "2026-08-04T19:45:00+00:00",
       "status": "error",
       "deliver": "local"
     }
