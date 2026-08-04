@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T08:15:51.708249-07:00",
+  "generated_at": "2026-08-04T08:30:52.639009-07:00",
   "calendar": [
     {
       "time": "7:00 AM - 9:00 AM",
@@ -20,6 +20,11 @@
       "time": "10:30 AM - 1:30 PM",
       "cal": "",
       "title": "Life Time Work"
+    },
+    {
+      "time": "11:00 AM - 12:00 PM",
+      "cal": "",
+      "title": "\ud83d\udea8 MASSIVE AI SHIFT @ 2 PM EST: Command AI To Finish $500 to $3K Client Jobs"
     },
     {
       "time": "2:30 PM - 3:30 PM",
@@ -59,14 +64,14 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-04T15:30:00+00:00",
+      "next_run_at": "2026-08-04T15:45:00+00:00",
       "status": "ok",
       "deliver": "local"
     },
     {
       "name": "Topic Dashboard Refresh",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-04T15:30:00+00:00",
+      "next_run_at": "2026-08-04T15:45:00+00:00",
       "status": "error",
       "deliver": "local"
     }
