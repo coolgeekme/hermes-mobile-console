@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T07:01:00.389796-07:00",
+  "generated_at": "2026-08-05T07:15:58.700617-07:00",
   "calendar": [
     {
       "time": "7:00 AM - 9:00 AM",
@@ -56,7 +56,7 @@
       "name": "Daily AI news social content pack",
       "schedule": "15 13 * * *",
       "next_run_at": "2026-08-06T13:15:00+00:00",
-      "status": "error",
+      "status": "ok",
       "deliver": "origin"
     },
     {
@@ -69,14 +69,14 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-05T14:15:00+00:00",
+      "next_run_at": "2026-08-05T14:30:00+00:00",
       "status": "ok",
       "deliver": "local"
     },
     {
       "name": "Topic Dashboard Refresh",
       "schedule": "*/5 * * * *",
-      "next_run_at": "2026-08-05T14:05:00+00:00",
+      "next_run_at": "2026-08-05T14:20:00+00:00",
       "status": "error",
       "deliver": "local"
     }
@@ -95,12 +95,6 @@
       "title": "DRAFT AGED",
       "detail": "LinkedIn draft from Thu Jul 30 is still unpublished (5d old). Green-light or archive?",
       "severity": "info"
-    },
-    {
-      "id": "cron_Daily AI news social content pack",
-      "title": "CRON ERROR",
-      "detail": "Daily AI news social content pack failed its last run.",
-      "severity": "alert"
     },
     {
       "id": "cron_Topic Dashboard Refresh",
