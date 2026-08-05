@@ -1,6 +1,11 @@
 {
-  "generated_at": "2026-08-05T05:15:54.233196-07:00",
+  "generated_at": "2026-08-05T05:30:53.978328-07:00",
   "calendar": [
+    {
+      "time": "7:00 AM - 9:00 AM",
+      "cal": "",
+      "title": "\ud83d\ude80 LIVE: How to Build & Sell AI Apps with Just One Command\u2014Right From Your Phone - Build AI Apps You Can Sell for $497\u2013$2,997 - 10 AM EDT"
+    },
     {
       "time": "7:00 AM - 8:00 AM",
       "cal": "",
@@ -64,14 +69,14 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-05T12:30:00+00:00",
+      "next_run_at": "2026-08-05T12:45:00+00:00",
       "status": "ok",
       "deliver": "local"
     },
     {
       "name": "Topic Dashboard Refresh",
       "schedule": "*/5 * * * *",
-      "next_run_at": "2026-08-05T12:20:00+00:00",
+      "next_run_at": "2026-08-05T12:35:00+00:00",
       "status": "error",
       "deliver": "local"
     }
