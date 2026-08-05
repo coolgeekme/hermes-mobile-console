@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T08:01:04.638126-07:00",
+  "generated_at": "2026-08-05T08:15:59.618555-07:00",
   "calendar": [
     {
       "time": "7:00 AM - 9:00 AM",
@@ -10,6 +10,11 @@
       "time": "7:00 AM - 8:00 AM",
       "cal": "",
       "title": "\ud83d\ude80 The Fastest Way to Land AI Agency Clients (LIVE 10AM EST)"
+    },
+    {
+      "time": "8:00 AM - 9:00 AM",
+      "cal": "",
+      "title": "Reggie / Gelyn / Rob - Amex issue"
     },
     {
       "time": "10:00 AM - 11:00 AM",
@@ -69,14 +74,14 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-05T15:15:00+00:00",
+      "next_run_at": "2026-08-05T15:30:00+00:00",
       "status": "ok",
       "deliver": "local"
     },
     {
       "name": "Topic Dashboard Refresh",
       "schedule": "*/5 * * * *",
-      "next_run_at": "2026-08-05T15:05:00+00:00",
+      "next_run_at": "2026-08-05T15:20:00+00:00",
       "status": "error",
       "deliver": "local"
     }
