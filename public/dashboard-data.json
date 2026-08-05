@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T19:16:02.584765-07:00",
+  "generated_at": "2026-08-04T19:31:00.526881-07:00",
   "calendar": [
     {
       "time": "10:00 AM - 11:00 AM",
@@ -59,14 +59,14 @@
     {
       "name": "Hermes Mobile Console Export",
       "schedule": "*/15 * * * *",
-      "next_run_at": "2026-08-05T02:30:00+00:00",
+      "next_run_at": "2026-08-05T02:45:00+00:00",
       "status": "ok",
       "deliver": "local"
     },
     {
       "name": "Topic Dashboard Refresh",
       "schedule": "*/5 * * * *",
-      "next_run_at": "2026-08-05T02:20:00+00:00",
+      "next_run_at": "2026-08-05T02:35:00+00:00",
       "status": "error",
       "deliver": "local"
     }
@@ -93,7 +93,7 @@
       "severity": "alert"
     }
   ],
-  "skills_count": 129,
+  "skills_count": 130,
   "tasks_today": 5,
   "memory_pct": "N/A",
   "memory_is_placeholder": true
